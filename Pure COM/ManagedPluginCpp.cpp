@@ -30,8 +30,7 @@ using namespace System::Runtime::InteropServices;
 
 namespace ManagedPluginCpp
 {
-	int
-		MainPlugin::Execute(...cli::array<System::String^, 1>^ parameters)
+	int MainPlugin::Execute(...cli::array<System::String^, 1>^ parameters)
 	{
 		InteropComApi::InwOpState10^ interop_state = ComApiAccess::ComApiBridge::State;
 		IUnknown* iunk_state = static_cast<IUnknown*>(Marshal::GetIUnknownForObject(interop_state).ToPointer());
